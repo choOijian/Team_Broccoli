@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broccoli.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+        }
+
+        .hero-title {
+            font-size: min(15vw, 16rem);
+            line-height: 1;
+            letter-spacing: -0.07em; /* Extreme narrow tracking */
+            font-weight: 300;
+        }
+
+        .hover-neon {
+            transition: color 0.3s ease;
+        }
+        .hover-neon:hover {
+            color: #00FF00;
+        }
+
+        ::selection {
+            background-color: #00FF00;
+            color: black;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-hidden flex flex-col h-screen selection:bg-[#00FF00] selection:text-black">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-transparent">
+        <a href="index.html" class="text-3xl md:text-4xl font-extrabold tracking-tighter hover-neon cursor-pointer">
+            Broccoli.
+        </a>
+
+        <nav class="flex gap-6 md:gap-12 text-lg md:text-xl font-bold tracking-tighter">
+            <a href="about.html" class="hover-neon">About</a>
+            <a href="archive.html" class="hover-neon">Archive</a>
+            <a href="works.html" class="hover-neon">Works</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="w-full flex-grow flex flex-col pt-32 md:pt-48 bg-white relative">
+        
+        <!-- Center/Top: Big Text Layer -->
+        <div class="flex justify-center w-full px-4 pt-[10vh]">
+            <h1 class="hero-title text-center whitespace-nowrap relative z-20">
+                일상 속 AI
+            </h1>
+        </div>
+
+        <!-- Hero Image Layer -->
+        <div class="absolute bottom-0 left-0 w-full flex justify-center items-end z-10 pointer-events-none">
+            <img src="gemini-image.png" alt="Handshake" class="w-full max-w-4xl h-auto object-contain object-bottom opacity-90 pb-[10vh]">
+        </div>
+
+        <!-- Bottom: Team Info -->
+        <div class="absolute bottom-0 left-0 w-full flex items-end justify-between px-6 pb-8 md:px-12 md:pb-10 text-lg md:text-2xl font-medium tracking-tighter text-black z-30">
+            <span>TEAM. 브로콜리</span>
+            <span class="text-right">박성은, 염지우, 최서희, 최지안</span>
+        </div>
+        
+    </main>
+
+</body>
+</html>

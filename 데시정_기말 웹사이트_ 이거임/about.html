@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broccoli. - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            scroll-behavior: smooth;
+        }
+
+        .hover-neon {
+            transition: color 0.3s ease;
+        }
+        .hover-neon:hover {
+            color: #00FF00;
+        }
+
+        ::selection {
+            background-color: #00FF00;
+            color: black;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden flex flex-col min-h-screen selection:bg-[#00FF00] selection:text-black">
+
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-white/90 backdrop-blur-md">
+        <a href="index.html" class="text-3xl md:text-4xl font-extrabold tracking-tighter hover-neon cursor-pointer">
+            Broccoli.
+        </a>
+
+        <nav class="flex gap-6 md:gap-12 text-lg md:text-xl font-bold tracking-tighter">
+            <a href="about.html" class="hover-neon text-[#00FF00]">About</a>
+            <a href="archive.html" class="hover-neon">Archive</a>
+            <a href="works.html" class="hover-neon">Works</a>
+        </nav>
+    </header>
+
+    <!-- Main About Content -->
+    <main class="w-full flex-grow pt-40 md:pt-48 pb-24 px-6 md:px-12 max-w-[1000px] mx-auto">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-16 leading-[1.3] md:leading-[1.3]">
+            "우리는 일상 속에서 AI를<br class="hidden md:block"> 얼마나 활용하고 있을까요?"
+        </h1>
+        
+        <p class="text-lg md:text-xl lg:text-2xl leading-loose tracking-tighter text-gray-800 mb-24 break-keep">
+            이 질문은 단순한 호기심에서 시작되었습니다. 오늘날 AI는 우리가 직접 명령을 내리는 '도구'를 넘어, 일상의 미세한 틈새마다 스며들고 있습니다. 우리는 필요에 따라 능동적으로 AI를 부리기도 하지만, 우리가 인지하지 못하는 사이 알고리즘은 우리의 취향을 설계하고 선택을 유도하며 일상을 잠식하고 있습니다. 본 프로젝트는 우리도 모르는 사이에 일상의 배경이 되어버린 AI 기술의 실태를 파악하고, 기술 편의성에 가려진 의존도와 그에 따른 인식의 변화를 데이터로 증명하고자 합니다.
+        </p>
+
+        <section>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tighter text-black mb-12 pb-4 border-b-2 border-black inline-block">
+                데이터 수집
+            </h2>
+            
+            <div class="mb-16">
+                <h3 class="text-xl md:text-2xl font-bold tracking-tighter text-black mb-8">Desk Research (문헌 및 사례 조사)</h3>
+                <ul class="list-disc pl-5 md:pl-8 space-y-5 text-base md:text-lg leading-relaxed tracking-tighter text-gray-800 marker:text-black">
+                    <li><strong class="font-bold text-black">AI 침투 지표:</strong> 서비스별 AI 도입률 및 노출 데이터 (사용 횟수, 체류 시간)</li>
+                    <li><strong class="font-bold text-black">알고리즘 의존도:</strong> 콘텐츠 소비 및 쇼핑 추천 시스템의 영향력 분석</li>
+                    <li><strong class="font-bold text-black">일상적 개입:</strong> 자동 완성, 추천 알고리즘, 챗봇 등 무의식적 활용 사례</li>
+                    <li><strong class="font-bold text-black">보이지 않는 영향:</strong> 필터 버블(Filter Bubble) 및 생성형 AI 활용 실태</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl md:text-2xl font-bold tracking-tighter text-black mb-5">User Survey & Interview (사용자 경험 조사)</h3>
+                <p class="text-base md:text-lg font-medium tracking-tighter text-gray-600 mb-8 bg-gray-50 border border-gray-200 inline-block px-4 py-2 rounded-lg">타겟: AI를 의식적으로 사용하는 유무형의 사용자 그룹</p>
+                <ul class="list-disc pl-5 md:pl-8 space-y-5 text-base md:text-lg leading-relaxed tracking-tighter text-gray-800 marker:text-black">
+                    <li>AI 기능 인지 및 의식적 활용 여부 (구독 유무 포함)</li>
+                    <li>일상 속 AI 활용 시점 및 평균 사용 시간</li>
+                    <li>심리적 의존도 및 AI 부재 시 느끼는 불편함 측정</li>
+                    <li>기술 편의성에 대한 사용자 인식 데이터</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 text-center text-gray-400 text-sm font-medium tracking-tighter mt-auto">
+        &copy; 2026 Team Broccoli. All rights reserved.
+    </footer>
+
+</body>
+</html>
