@@ -1,0 +1,35 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #ffffff;
+    color: #111111;
+    scroll-behavior: smooth;
+}
+
+.hero-title {
+    font-size: min(15vw, 16rem);
+    line-height: 1;
+    letter-spacing: -0.07em; /* Extreme narrow tracking */
+    font-weight: 300;
+}
+
+.hover-neon {
+    transition: color 0.3s ease;
+}
+
+.hover-neon:hover {
+    color: #00FF00;
+}
+
+::selection {
+    background-color: #00FF00;
+    color: black;
+}
+
+/* Global Image Optimization */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    transform: translateZ(0); /* Hardware acceleration for smoother edges */
+}

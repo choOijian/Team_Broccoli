@@ -5,32 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broccoli. - Archive</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-        
-        body {
-            font-family: 'Pretendard', sans-serif;
-            background-color: #ffffff;
-            color: #111111;
-        }
-
-        .hover-neon {
-            transition: color 0.3s ease;
-        }
-        .hover-neon:hover {
-            color: #00FF00;
-        }
-
-        ::selection {
-            background-color: #00FF00;
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased overflow-hidden flex flex-col h-screen selection:bg-[#00FF00] selection:text-black">
+<body class="antialiased overflow-x-hidden flex flex-col min-h-screen selection:bg-[#00FF00] selection:text-black">
 
     <!-- Header Section -->
-    <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-transparent">
+    <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-white/90 backdrop-blur-md">
         <a href="index.html" class="text-3xl md:text-4xl font-extrabold tracking-tighter hover-neon cursor-pointer">
             Broccoli.
         </a>
@@ -42,8 +22,411 @@
         </nav>
     </header>
 
-    <!-- Blank State -->
-    <main class="w-full flex-grow bg-white"></main>
+    <!-- Main Archive Content -->
+    <main class="w-full flex-grow pt-32 md:pt-40 pb-24 px-6 md:px-12 max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full lg:w-1/4 hidden lg:block">
+            <div class="sticky top-40 flex flex-col gap-6 font-bold text-gray-400 tracking-tighter text-lg">
+                <a href="#overview" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="overview">
+                    <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 01. Overview
+                </a>
+                <a href="#collection" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="collection">
+                    <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 02. Data Collection
+                </a>
+                <div class="flex flex-col gap-4">
+                    <a href="#classification" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="classification">
+                        <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 03. Data Classification
+                    </a>
+                    <div class="flex flex-col gap-3 pl-9 text-base font-semibold text-gray-400">
+                        <a href="#class-status" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-status">현황</a>
+                        <a href="#class-category" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-category">카테고리</a>
+                        <a href="#class-unconscious" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-unconscious">무의식</a>
+                        <a href="#class-dependency" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-dependency">의존도</a>
+                        <a href="#class-risk" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-risk">효과와 리스크</a>
+                    </div>
+                </div>
+                <a href="#insights" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="insights">
+                    <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 04. Insights
+                </a>
+            </div>
+        </aside>
 
+        <!-- Right Content Area -->
+        <div class="w-full lg:w-3/4 flex flex-col">
+        
+        <!-- 01. Research Overview -->
+        <section id="overview" class="mb-24 scroll-mt-40">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-8 text-black">
+                01. Research Overview
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 leading-loose tracking-tighter mb-10 break-keep">
+                본 조사는 현대인의 일상 속 AI 기술 침투 수준을 파악하기 위해 진행되었습니다. 인지하지 못하는 사이 일상을 지배하는 무의식적 AI 노출의 실태를 증명하고, 기술 편의성 이면에 숨겨진 의존도와 영향을 분석합니다.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-gray-50 p-8 border border-gray-100">
+                <div>
+                    <h3 class="font-bold text-black mb-2 tracking-tighter">조사 기간</h3>
+                    <p class="text-gray-600 tracking-tighter">2026.04.23 – 2026.04.29</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-black mb-2 tracking-tighter">조사 대상</h3>
+                    <p class="text-gray-600 tracking-tighter">디지털 환경에 익숙한 20~30대 스마트폰 및 PC 사용자</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-black mb-2 tracking-tighter">조사 방법</h3>
+                    <p class="text-gray-600 tracking-tighter">데스크 리서치 및 53명 대상 심층 설문조사</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02. Data Collection -->
+        <section id="collection" class="mb-32 scroll-mt-40">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-black mb-12 border-b-2 border-black pb-4">
+                02. Data Collection
+            </h2>
+            <div class="w-full mb-16">
+                <a href="https://ibb.co/G32hCJQF" target="_blank">
+                    <img src="https://i.ibb.co/fGpcrSdQ/2026-04-30-4-43-40.png" alt="2026-04-30-4-43-40" border="0" class="w-full h-auto border border-gray-200">
+                </a>
+            </div>
+
+            <!-- Survey Section -->
+            <div class="w-full">
+                <h3 class="text-2xl font-bold text-black mb-8 flex items-center">
+                    <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> Survey Section
+                </h3>
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- Left: Survey Images -->
+                    <div class="w-full md:w-1/2 flex flex-col gap-6">
+                        <a href="https://ibb.co/Gfcd6rSV" target="_blank">
+                            <img src="https://i.ibb.co/qLkDS2QR/2026-04-30-4-47-22.png" alt="스크린샷 2026 04 30 오전 4 47 22" border="0" class="w-full h-auto border border-gray-200 shadow-sm hover:border-[#00FF00] transition-colors duration-300">
+                        </a>
+                        <a href="https://imgbb.com/" target="_blank">
+                            <img src="https://i.ibb.co/B5xKY722/2026-04-30-4-47-26.png" alt="스크린샷 2026 04 30 오전 4 47 26" border="0" class="w-full h-auto border border-gray-200 shadow-sm hover:border-[#00FF00] transition-colors duration-300">
+                        </a>
+                    </div>
+                    <!-- Right: Info / Text -->
+                    <div class="w-full md:w-1/2 bg-gray-50 p-8 border border-gray-200 flex flex-col justify-center">
+                        <h4 class="font-bold text-xl mb-6 text-black">설문조사 개요</h4>
+                        <ul class="list-disc pl-5 space-y-4 text-gray-700 tracking-tighter text-lg leading-relaxed">
+                            <li><strong>조사 대상:</strong> 디지털 환경에 익숙한 20~30대 사용자 53명</li>
+                            <li><strong>조사 목적:</strong> 일상 속 무의식적인 AI 노출과 알고리즘 의존도 측정 및 분석</li>
+                            <li><strong>주요 내용:</strong> 추천 피드 소비 비율, AI 도구 인지도 및 활용 빈도, 자발적 결정 비율 등</li>
+                            <li>좌측 이미지는 조사 대상자들에게 실제 배포되었던 설문지의 일부 화면입니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03. Data Classification -->
+        <section id="classification" class="mb-32 scroll-mt-40">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-black mb-12 border-b-2 border-black pb-4">
+                03. Data Classification
+            </h2>
+
+            <!-- 5 Categories Summary -->
+            <div class="mb-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#00FF00] font-black text-2xl mb-3">01</span>
+                    <span class="text-[#222] font-semibold text-sm break-keep leading-tight">글로벌 및 국내<br>AI 사용 현황</span>
+                </div>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#00FF00] font-black text-2xl mb-3">02</span>
+                    <span class="text-[#222] font-semibold text-sm break-keep leading-tight">AI 사용<br>카테고리</span>
+                </div>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#00FF00] font-black text-2xl mb-3">03</span>
+                    <span class="text-[#222] font-semibold text-sm break-keep leading-tight">무의식 이용<br>사례</span>
+                </div>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#00FF00] font-black text-2xl mb-3">04</span>
+                    <span class="text-[#222] font-semibold text-sm break-keep leading-tight">AI 의존도 및<br>사용 패턴</span>
+                </div>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#00FF00] font-black text-2xl mb-3">05</span>
+                    <span class="text-[#222] font-semibold text-sm break-keep leading-tight">AI 효과와<br>리스크</span>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- 2-1 -->
+                <div id="class-status" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                    <h3 class="text-2xl font-bold text-black flex items-center mb-8">
+                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> 글로벌 및 국내 AI 사용 현황
+                    </h3>
+                    
+                    <div class="space-y-10">
+                        <!-- Sub-section 1: 글로벌 AI 사용추이 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">1. 글로벌 AI 사용추이</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/RkzBw6vc" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/dwGLYpWD/2026-04-30-4-54-10.png" alt="2026-04-30-4-54-10" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/xqykSjKh" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/jkdNvM9h/2026-04-30-4-54-17.png" alt="2026-04-30-4-54-17" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sub-section 2: 국가별 사용추이 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">2. 국가별 사용추이</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/j97pnDhM" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/rKnWDHk6/2026-04-30-4-57-11.png" alt="2026-04-30-4-57-11" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/zWx7MYWD" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/LDRJFWDH/2026-04-30-4-57-18.png" alt="2026-04-30-4-57-18" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/s9sMHybw" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/5hsfFBG8/2026-04-30-4-59-08.png" alt="2026-04-30-4-59-08" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sub-section 3: 국내 AI 사용추이 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">3. 국내 AI 사용추이</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/84r2kDX9" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/Lhx6Kzv1/2026-04-30-5-00-14.png" alt="2026-04-30-5-00-14" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/k2DtLBjZ" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/Zzg0QX59/2026-04-30-5-00-07.png" alt="스크린샷 2026 04 30 오전 5 00 07" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/ycbnrck5" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/TxFBsx0R/2026-04-30-5-00-02.png" alt="2026-04-30-5-00-02" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2-2 -->
+                <div id="class-category" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                    <h3 class="text-2xl font-bold text-black flex items-center mb-8">
+                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> AI 사용 카테고리
+                    </h3>
+
+                    <div class="space-y-10">
+                        <!-- Sub-section 1: 산업적으로 사용되는 AI -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">1. 산업적으로 사용되는 AI</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/KxZWVWNZ" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/tpfDYDZf/2026-04-30-5-02-57.png" alt="2026-04-30-5-02-57" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/TByHdZ69" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/fYJCLbfj/2026-04-30-5-02-41.png" alt="2026-04-30-5-02-41" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sub-section 2: 일상적으로 사용되는 AI -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">2. 일상적으로 사용되는 AI</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/PsGWTs1m" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/qLYg0Lmy/2026-04-30-5-04-12.png" alt="2026-04-30-5-04-12" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/d07LXsmn" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/BVwrvHn8/2026-04-30-5-04-43.png" alt="2026-04-30-5-04-43" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/5X4Wzhhg" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/HL4DMTTf/Waze.png" alt="Waze" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/ZzrP42Rk" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/v4WGyXCK/Block-2-5-AI.png" alt="Block-2-5-AI" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/39cQYLdv" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/ksXv6WBJ/image.png" alt="image" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/hJWK6XJW" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/Kpq9PNpq/image.png" alt="image" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/R4jXD54K" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/rfdBwWfh/Bixby.png" alt="Bixby" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                                <a href="https://ibb.co/N6pBDdVv" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/XZpR0r2Q/Gboard.png" alt="Gboard" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2-3 -->
+                <div id="class-unconscious" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                    <h3 class="text-2xl font-bold text-black flex items-center mb-8">
+                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> 무의식 이용 사례
+                    </h3>
+
+                    <div class="space-y-10">
+                        <!-- Sub-section 1: 무의식 AI 사용추이 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">1. 무의식 AI 사용추이</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/LLMYWmX" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/632rxz7/2.png" alt="2" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sub-section 2: 무의식 AI 사용 사례 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">2. 무의식 AI 사용 사례</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/BHZKb3CC" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/rK6fY0ww/image.png" alt="image" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2-4 -->
+                <div id="class-dependency" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                    <h3 class="text-2xl font-bold text-black flex items-center mb-8">
+                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> AI 의존도 및 사용 패턴
+                    </h3>
+                    <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col gap-6">
+                        <a href="https://ibb.co/pDwqVVw" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/wHgtGGg/2026-04-30-5-16-37.png" alt="2026-04-30-5-16-37" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                        <a href="https://ibb.co/8L0RmwmV" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/zTrLmgmw/2026-04-30-5-16-30.png" alt="2026-04-30-5-16-30" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                        <a href="https://ibb.co/jvTjM2FV" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/SXPZn8pQ/2026-04-30-5-16-22.png" alt="2026-04-30-5-16-22" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                        <a href="https://ibb.co/SXZ2Q36R" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/RpJ1hDgz/2026-04-30-5-19-15.png" alt="2026-04-30-5-19-15" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                        <a href="https://ibb.co/My6HD9Nf" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/V0mGW3Bx/2026-04-30-5-19-10.png" alt="스크린샷 2026 04 30 오전 5 19 10" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                        <a href="https://ibb.co/0pLX98X1" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/rKhtpTtq/2026-04-30-5-19-06.png" alt="2026-04-30-5-19-06" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                        <a href="https://imgbb.com/" target="_blank" class="w-full">
+                            <img src="https://i.ibb.co/PvwCGKN9/2026-04-30-5-19-02.png" alt="스크린샷 2026 04 30 오전 5 19 02" border="0" class="w-full h-auto border border-gray-200">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2-5 -->
+                <div id="class-risk" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                    <h3 class="text-2xl font-bold text-black flex items-center mb-8">
+                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> AI 효과와 리스크
+                    </h3>
+
+                    <div class="space-y-10">
+                        <!-- Sub-section 1: 효과 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">1. 효과</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/TDfxK4rz" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/KcPpN2mC/2026-04-30-5-20-50.png" alt="2026-04-30-5-20-50" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Sub-section 2: 리스크 -->
+                        <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm">
+                            <h4 class="text-xl font-bold text-black mb-6">2. 리스크</h4>
+                            <div class="flex flex-col gap-6">
+                                <a href="https://ibb.co/PGJn5tZz" target="_blank" class="w-full">
+                                    <img src="https://i.ibb.co/VYbZv3Wp/2026-04-30-5-21-18.png" alt="2026-04-30-5-21-18" border="0" class="w-full h-auto border border-gray-200">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04. Insights -->
+        <section id="insights" class="scroll-mt-40">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-black mb-12 border-b-2 border-black pb-4">
+                04. Insights
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 통찰 1 -->
+                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
+                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">01. 초개인화 열망</h3>
+                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                        사용자들은 내가 직접 골라야 하는 번거로움을 해결하고 싶어하기에 단순 정보 검색을 넘어 AI가 내 상황을 미리 읽고 제안하는 개인화된 AI 서비스를 열망한다.
+                    </p>
+                </div>
+                <!-- 통찰 2 -->
+                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
+                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">02. 연령별 사용 비중</h3>
+                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                        연령대가 높아질 수록 무의식적 AI 사용률의 비중이 의식적 AI 사용 비중보다 높아진다.
+                    </p>
+                </div>
+                <!-- 통찰 3 -->
+                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
+                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">03. 신뢰의 모순</h3>
+                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                        AI에 대한 신뢰와 잘못된 정보에 대한 불신의 공존 - 신뢰성에서 모순이 일어난다.
+                    </p>
+                </div>
+                <!-- 통찰 4 -->
+                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
+                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">04. 1인 기업화</h3>
+                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                        AI의 발전으로 인해 다수가 협력하여 생성하는 산업에서 1인기업형으로 변화하고 있다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 text-center text-gray-400 text-sm font-medium tracking-tighter mt-auto">
+        &copy; 2026 Team Broccoli. All rights reserved.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const targets = document.querySelectorAll("section[id], div[id]");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const activeId = entry.target.getAttribute("id");
+                        // Reset all
+                        navLinks.forEach(link => {
+                            link.classList.remove("text-[#00FF00]", "font-extrabold");
+                            link.classList.add("text-gray-400", "font-bold");
+                            const indicator = link.querySelector('.indicator');
+                            if(indicator) indicator.classList.replace("bg-[#00FF00]", "bg-transparent");
+                        });
+
+                        // Set active
+                        const activeLink = document.querySelector(`.nav-link[data-target="${activeId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.remove("text-gray-400", "font-bold");
+                            activeLink.classList.add("text-[#00FF00]", "font-extrabold");
+                            const indicator = activeLink.querySelector('.indicator');
+                            if(indicator) indicator.classList.replace("bg-transparent", "bg-[#00FF00]");
+                        }
+                    }
+                });
+            }, { rootMargin: "-30% 0px -60% 0px" });
+
+            targets.forEach(target => {
+                if(target.id === 'overview' || target.id === 'collection' || target.id === 'classification' || target.id.startsWith('class-') || target.id === 'insights') {
+                    observer.observe(target);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
