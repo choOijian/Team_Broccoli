@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased overflow-x-hidden flex flex-col min-h-screen selection:bg-[#00FF00] selection:text-black">
+<body class="antialiased overflow-x-hidden flex flex-col min-h-screen selection:bg-[#1ae214] selection:text-black">
 
     <!-- Header Section -->
     <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-white/90 backdrop-blur-md">
@@ -17,36 +17,51 @@
 
         <nav class="flex gap-6 md:gap-12 text-lg md:text-xl font-bold tracking-tighter">
             <a href="about.html" class="hover-neon">About</a>
-            <a href="archive.html" class="hover-neon text-[#00FF00]">Archive</a>
+            <a href="archive.html" class="hover-neon text-[#1ae214]">Archive</a>
             <a href="works.html" class="hover-neon">Works</a>
         </nav>
     </header>
 
     <!-- Main Archive Content -->
-    <main class="w-full flex-grow pt-32 md:pt-40 pb-24 px-6 md:px-12 max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20">
+    <main class="w-full flex-grow pt-32 md:pt-40 pb-24 px-6 md:px-12 max-w-[1400px] mx-auto flex flex-col">
+        
+        <!-- Weekly Tabs Navigation -->
+        <div class="flex flex-wrap gap-12 md:gap-16 border-b border-gray-200 pb-3 mb-16 items-end">
+            <button class="tab-btn group flex flex-col items-start focus:outline-none" data-week="week-8">
+                <span class="tab-text text-xl md:text-2xl font-medium tracking-tight text-gray-800 transition-colors duration-300">Week 8</span>
+                <span class="tab-indicator block h-[2px] w-full bg-[#1ae214] mt-3 transition-all duration-300"></span>
+            </button>
+            <button class="tab-btn group flex flex-col items-start focus:outline-none" data-week="week-9">
+                <span class="tab-text text-xl md:text-2xl font-medium tracking-tight text-gray-300 group-hover:text-gray-500 transition-colors duration-300">Week 9</span>
+                <span class="tab-indicator block h-[2px] w-0 bg-[#1ae214] mt-3 transition-all duration-300 group-hover:w-full"></span>
+            </button>
+        </div>
+
+        <!-- Week 8 Content -->
+        <div id="week-8" class="week-content flex flex-col lg:flex-row gap-12 lg:gap-20 w-full">
         
         <!-- Sidebar Navigation -->
         <aside class="w-full lg:w-1/4 hidden lg:block">
             <div class="sticky top-40 flex flex-col gap-6 font-bold text-gray-400 tracking-tighter text-lg">
-                <a href="#overview" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="overview">
+                <a href="#overview" class="flex items-center gap-4 hover:text-[#1ae214] transition-colors nav-link" data-target="overview">
                     <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 01. Overview
                 </a>
-                <a href="#collection" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="collection">
+                <a href="#collection" class="flex items-center gap-4 hover:text-[#1ae214] transition-colors nav-link" data-target="collection">
                     <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 02. Data Collection
                 </a>
                 <div class="flex flex-col gap-4">
-                    <a href="#classification" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="classification">
+                    <a href="#classification" class="flex items-center gap-4 hover:text-[#1ae214] transition-colors nav-link" data-target="classification">
                         <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 03. Data Classification
                     </a>
                     <div class="flex flex-col gap-3 pl-9 text-base font-semibold text-gray-400">
-                        <a href="#class-status" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-status">현황</a>
-                        <a href="#class-category" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-category">카테고리</a>
-                        <a href="#class-unconscious" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-unconscious">무의식</a>
-                        <a href="#class-dependency" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-dependency">의존도</a>
-                        <a href="#class-risk" class="hover:text-[#00FF00] transition-colors nav-link" data-target="class-risk">효과와 리스크</a>
+                        <a href="#class-status" class="hover:text-[#1ae214] transition-colors nav-link" data-target="class-status">현황</a>
+                        <a href="#class-category" class="hover:text-[#1ae214] transition-colors nav-link" data-target="class-category">카테고리</a>
+                        <a href="#class-unconscious" class="hover:text-[#1ae214] transition-colors nav-link" data-target="class-unconscious">무의식</a>
+                        <a href="#class-dependency" class="hover:text-[#1ae214] transition-colors nav-link" data-target="class-dependency">의존도</a>
+                        <a href="#class-risk" class="hover:text-[#1ae214] transition-colors nav-link" data-target="class-risk">효과와 리스크</a>
                     </div>
                 </div>
-                <a href="#insights" class="flex items-center gap-4 hover:text-[#00FF00] transition-colors nav-link" data-target="insights">
+                <a href="#insights" class="flex items-center gap-4 hover:text-[#1ae214] transition-colors nav-link" data-target="insights">
                     <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 04. Insights
                 </a>
             </div>
@@ -93,16 +108,16 @@
             <!-- Survey Section -->
             <div class="w-full">
                 <h3 class="text-2xl font-bold text-black mb-8 flex items-center">
-                    <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> Survey Section
+                    <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span> Survey Section
                 </h3>
                 <div class="flex flex-col md:flex-row gap-8">
                     <!-- Left: Survey Images -->
                     <div class="w-full md:w-1/2 flex flex-col gap-6">
                         <a href="https://ibb.co/Gfcd6rSV" target="_blank">
-                            <img src="https://i.ibb.co/qLkDS2QR/2026-04-30-4-47-22.png" alt="스크린샷 2026 04 30 오전 4 47 22" border="0" class="w-full h-auto border border-gray-200 shadow-sm hover:border-[#00FF00] transition-colors duration-300">
+                            <img src="https://i.ibb.co/qLkDS2QR/2026-04-30-4-47-22.png" alt="스크린샷 2026 04 30 오전 4 47 22" border="0" class="w-full h-auto border border-gray-200 shadow-sm hover:border-[#1ae214] transition-colors duration-300">
                         </a>
                         <a href="https://imgbb.com/" target="_blank">
-                            <img src="https://i.ibb.co/B5xKY722/2026-04-30-4-47-26.png" alt="스크린샷 2026 04 30 오전 4 47 26" border="0" class="w-full h-auto border border-gray-200 shadow-sm hover:border-[#00FF00] transition-colors duration-300">
+                            <img src="https://i.ibb.co/B5xKY722/2026-04-30-4-47-26.png" alt="스크린샷 2026 04 30 오전 4 47 26" border="0" class="w-full h-auto border border-gray-200 shadow-sm hover:border-[#1ae214] transition-colors duration-300">
                         </a>
                     </div>
                     <!-- Right: Info / Text -->
@@ -127,33 +142,33 @@
 
             <!-- 5 Categories Summary -->
             <div class="mb-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
-                    <span class="text-[#00FF00] font-black text-2xl mb-3">01</span>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#1ae214] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#1ae214] font-black text-2xl mb-3">01</span>
                     <span class="text-[#222] font-semibold text-sm break-keep leading-tight">글로벌 및 국내<br>AI 사용 현황</span>
                 </div>
-                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
-                    <span class="text-[#00FF00] font-black text-2xl mb-3">02</span>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#1ae214] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#1ae214] font-black text-2xl mb-3">02</span>
                     <span class="text-[#222] font-semibold text-sm break-keep leading-tight">AI 사용<br>카테고리</span>
                 </div>
-                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
-                    <span class="text-[#00FF00] font-black text-2xl mb-3">03</span>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#1ae214] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#1ae214] font-black text-2xl mb-3">03</span>
                     <span class="text-[#222] font-semibold text-sm break-keep leading-tight">무의식 이용<br>사례</span>
                 </div>
-                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
-                    <span class="text-[#00FF00] font-black text-2xl mb-3">04</span>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#1ae214] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#1ae214] font-black text-2xl mb-3">04</span>
                     <span class="text-[#222] font-semibold text-sm break-keep leading-tight">AI 의존도 및<br>사용 패턴</span>
                 </div>
-                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#00FF00] hover:shadow-sm transition-all duration-300">
-                    <span class="text-[#00FF00] font-black text-2xl mb-3">05</span>
+                <div class="bg-white border border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#1ae214] hover:shadow-sm transition-all duration-300">
+                    <span class="text-[#1ae214] font-black text-2xl mb-3">05</span>
                     <span class="text-[#222] font-semibold text-sm break-keep leading-tight">AI 효과와<br>리스크</span>
                 </div>
             </div>
 
             <div class="space-y-6">
                 <!-- 2-1 -->
-                <div id="class-status" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                <div id="class-status" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#1ae214] transition-colors duration-300 scroll-mt-40">
                     <h3 class="text-2xl font-bold text-black flex items-center mb-8">
-                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> 글로벌 및 국내 AI 사용 현황
+                        <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span> 글로벌 및 국내 AI 사용 현황
                     </h3>
                     
                     <div class="space-y-10">
@@ -205,9 +220,9 @@
                 </div>
 
                 <!-- 2-2 -->
-                <div id="class-category" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                <div id="class-category" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#1ae214] transition-colors duration-300 scroll-mt-40">
                     <h3 class="text-2xl font-bold text-black flex items-center mb-8">
-                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> AI 사용 카테고리
+                        <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span> AI 사용 카테고리
                     </h3>
 
                     <div class="space-y-10">
@@ -258,9 +273,9 @@
                 </div>
 
                 <!-- 2-3 -->
-                <div id="class-unconscious" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                <div id="class-unconscious" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#1ae214] transition-colors duration-300 scroll-mt-40">
                     <h3 class="text-2xl font-bold text-black flex items-center mb-8">
-                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> 무의식 이용 사례
+                        <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span> 무의식 이용 사례
                     </h3>
 
                     <div class="space-y-10">
@@ -287,9 +302,9 @@
                 </div>
 
                 <!-- 2-4 -->
-                <div id="class-dependency" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                <div id="class-dependency" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#1ae214] transition-colors duration-300 scroll-mt-40">
                     <h3 class="text-2xl font-bold text-black flex items-center mb-8">
-                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> AI 의존도 및 사용 패턴
+                        <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span> AI 의존도 및 사용 패턴
                     </h3>
                     <div class="bg-white p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col gap-6">
                         <a href="https://ibb.co/pDwqVVw" target="_blank" class="w-full">
@@ -317,9 +332,9 @@
                 </div>
 
                 <!-- 2-5 -->
-                <div id="class-risk" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#00FF00] transition-colors duration-300 scroll-mt-40">
+                <div id="class-risk" class="bg-gray-50 p-6 md:p-8 border border-gray-200 hover:border-[#1ae214] transition-colors duration-300 scroll-mt-40">
                     <h3 class="text-2xl font-bold text-black flex items-center mb-8">
-                        <span class="w-3 h-3 bg-[#00FF00] mr-4 inline-block"></span> AI 효과와 리스크
+                        <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span> AI 효과와 리스크
                     </h3>
 
                     <div class="space-y-10">
@@ -352,32 +367,36 @@
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter text-black mb-12 border-b-2 border-black pb-4">
                 04. Insights
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                 <!-- 통찰 1 -->
-                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
-                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">01. 초개인화 열망</h3>
-                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                    <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 01</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">초개인화 열망</h3>
+                    <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
                         사용자들은 내가 직접 골라야 하는 번거로움을 해결하고 싶어하기에 단순 정보 검색을 넘어 AI가 내 상황을 미리 읽고 제안하는 개인화된 AI 서비스를 열망한다.
                     </p>
                 </div>
                 <!-- 통찰 2 -->
-                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
-                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">02. 연령별 사용 비중</h3>
-                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                    <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 02</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">연령별 사용 비중</h3>
+                    <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
                         연령대가 높아질 수록 무의식적 AI 사용률의 비중이 의식적 AI 사용 비중보다 높아진다.
                     </p>
                 </div>
                 <!-- 통찰 3 -->
-                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
-                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">03. 신뢰의 모순</h3>
-                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                    <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 03</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">신뢰의 모순</h3>
+                    <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
                         AI에 대한 신뢰와 잘못된 정보에 대한 불신의 공존 - 신뢰성에서 모순이 일어난다.
                     </p>
                 </div>
                 <!-- 통찰 4 -->
-                <div class="bg-black text-white p-8 md:p-10 hover:border-[#00FF00] border border-transparent transition-colors duration-300 flex flex-col justify-center">
-                    <h3 class="text-2xl font-extrabold mb-4 text-[#00FF00]">04. 1인 기업화</h3>
-                    <p class="text-gray-300 tracking-tighter leading-relaxed break-keep">
+                <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                    <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 04</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">1인 기업화</h3>
+                    <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
                         AI의 발전으로 인해 다수가 협력하여 생성하는 산업에서 1인기업형으로 변화하고 있다.
                     </p>
                 </div>
@@ -385,6 +404,168 @@
         </section>
 
         </div>
+        </div> <!-- End of Week 8 Content -->
+
+        <!-- Week 9 Content -->
+        <div id="week-9" class="week-content hidden flex-col lg:flex-row gap-12 lg:gap-20 w-full">
+            
+            <!-- Sidebar Navigation for Week 9 -->
+            <aside class="w-full lg:w-1/4 hidden lg:block">
+                <div class="sticky top-40 flex flex-col gap-6 font-bold text-gray-400 tracking-tighter text-lg">
+                    <a href="#w9-summary" class="flex items-center gap-4 hover:text-[#1ae214] transition-colors nav-link" data-target="w9-summary">
+                        <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 01. Insight Summary
+                    </a>
+                    <div class="flex flex-col gap-4">
+                        <a href="#w9-process" class="flex items-center gap-4 hover:text-[#1ae214] transition-colors nav-link" data-target="w9-process">
+                            <span class="w-1 h-5 rounded-full bg-transparent indicator transition-colors"></span> 02. Insight Process
+                        </a>
+                        <div class="flex flex-col gap-3 pl-9 text-base font-semibold text-gray-400">
+                            <a href="#w9-insight1" class="hover:text-[#1ae214] transition-colors nav-link" data-target="w9-insight1">Insight 01</a>
+                            <a href="#w9-insight2" class="hover:text-[#1ae214] transition-colors nav-link" data-target="w9-insight2">Insight 02</a>
+                            <a href="#w9-insight3" class="hover:text-[#1ae214] transition-colors nav-link" data-target="w9-insight3">Insight 03</a>
+                            <a href="#w9-insight4" class="hover:text-[#1ae214] transition-colors nav-link" data-target="w9-insight4">Insight 04</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Content Area for Week 9 -->
+            <div class="w-full lg:w-3/4 flex flex-col">
+                <!-- 01. Insight Summary -->
+                <section id="w9-summary" class="mb-24 scroll-mt-40 border-b border-gray-200 pb-20">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-12 text-black">
+                        01. Insight Summary
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                        <!-- Insight Card 1 -->
+                        <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                            <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 01</span>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">초개인화 열망</h3>
+                            <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
+                                사용자들은 내가 직접 골라야 하는 번거로움을 해결하고 싶어하기에 단순 정보 검색을 넘어 AI가 내 상황을 미리 읽고 제안하는 개인화된 AI 서비스를 열망한다.
+                            </p>
+                        </div>
+                        <!-- Insight Card 2 -->
+                        <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                            <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 02</span>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">연령별 사용 비중</h3>
+                            <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
+                                연령대가 높아질 수록 무의식적 AI 사용률의 비중이 의식적 AI 사용 비중보다 높아진다.
+                            </p>
+                        </div>
+                        <!-- Insight Card 3 -->
+                        <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                            <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 03</span>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">신뢰의 모순</h3>
+                            <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
+                                AI에 대한 신뢰와 잘못된 정보에 대한 불신의 공존 - 신뢰성에서 모순이 일어난다.
+                            </p>
+                        </div>
+                        <!-- Insight Card 4 -->
+                        <div class="group bg-[#F9F9F9] rounded-3xl p-10 md:p-12 border border-gray-200 hover:border-[#1ae214]/30 hover:-translate-y-2 shadow-sm hover:shadow-md transition-all duration-500 flex flex-col justify-center">
+                            <span class="text-[#1ae214] font-black text-2xl md:text-3xl mb-4 block transition-all duration-500">Insight 04</span>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 tracking-tighter break-keep text-gray-900">1인 기업화</h3>
+                            <p class="text-gray-600 tracking-tight leading-relaxed break-keep text-sm md:text-base">
+                                AI의 발전으로 인해 다수가 협력하여 생성하는 산업에서 1인기업형으로 변화하고 있다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 02. Insight Process -->
+                <section id="w9-process" class="mb-12 scroll-mt-40">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter mb-8 text-black">
+                        02. Insight Process
+                    </h2>
+                </section>
+
+                <div class="space-y-24 mb-24">
+                    <!-- Insight 01 -->
+                    <div id="w9-insight1" class="scroll-mt-40 pb-20 border-b border-gray-100">
+                        <div class="flex items-center mb-8">
+                            <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span>
+                            <h3 class="text-xl md:text-2xl font-bold text-black tracking-tighter">Insight 01</h3>
+                        </div>
+                        <div class="relative pl-10 md:pl-12 mb-12">
+                            <span class="absolute left-0 top-[-0.75rem] text-[#1ae214] font-serif text-5xl md:text-6xl opacity-90">“</span>
+                            <h4 class="text-xl md:text-2xl font-medium tracking-tight text-gray-800 leading-relaxed break-keep">
+                                사용자들은 내가 직접 골라야 하는 번거로움을 해결하고 싶어하기에 단순 정보 검색을 넘어 AI가 내 상황을 미리 읽고 제안하는 개인화된 AI 서비스를 열망한다.
+                            </h4>
+                        </div>
+                        <div class="w-full flex flex-col gap-8 mt-8">
+                            <img src="https://i.postimg.cc/3xwNjXC1/1beon.png" alt="Insight 01 Process 1" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/bwvr0xHn/1beon-1.png" alt="Insight 01 Process 2" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/13zX0GcG/1beon-2.png" alt="Insight 01 Process 3" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/XYvqKfcg/1beon-3.png" alt="Insight 01 Process 4" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/x1d8GvyG/1beon-4.png" alt="Insight 01 Process 5" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/W14zmG6n/1beon-5.png" alt="Insight 01 Process 6" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                        </div>
+                    </div>
+
+                    <!-- Insight 02 -->
+                    <div id="w9-insight2" class="scroll-mt-40 pb-20 border-b border-gray-100">
+                        <div class="flex items-center mb-8">
+                            <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span>
+                            <h3 class="text-xl md:text-2xl font-bold text-black tracking-tighter">Insight 02</h3>
+                        </div>
+                        <div class="relative pl-10 md:pl-12 mb-12">
+                            <span class="absolute left-0 top-[-0.75rem] text-[#1ae214] font-serif text-5xl md:text-6xl opacity-90">“</span>
+                            <h4 class="text-xl md:text-2xl font-medium tracking-tight text-gray-800 leading-relaxed break-keep">
+                                연령대가 높아질 수록 무의식적 AI 사용률의 비중이 의식적 AI 사용 비중보다 높아진다.
+                            </h4>
+                        </div>
+                        <div class="w-full flex flex-col gap-8 mt-8">
+                            <img src="https://i.postimg.cc/jjmhYddZ/2beon.png" alt="Insight 02 Process 1" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/xdhPVTTy/2beon-1.png" alt="Insight 02 Process 2" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/KYw5hvv9/2beon-2.png" alt="Insight 02 Process 3" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/VNpFPLL4/2beon-3.png" alt="Insight 02 Process 4" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                        </div>
+                    </div>
+
+                    <!-- Insight 03 -->
+                    <div id="w9-insight3" class="scroll-mt-40 pb-20 border-b border-gray-100">
+                        <div class="flex items-center mb-8">
+                            <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span>
+                            <h3 class="text-xl md:text-2xl font-bold text-black tracking-tighter">Insight 03</h3>
+                        </div>
+                        <div class="relative pl-10 md:pl-12 mb-12">
+                            <span class="absolute left-0 top-[-0.75rem] text-[#1ae214] font-serif text-5xl md:text-6xl opacity-90">“</span>
+                            <h4 class="text-xl md:text-2xl font-medium tracking-tight text-gray-800 leading-relaxed break-keep">
+                                AI에 대한 신뢰와 잘못된 정보에 대한 불신의 공존 - 신뢰성에서 모순이 일어난다.
+                            </h4>
+                        </div>
+                        <div class="w-full flex flex-col gap-8 mt-8">
+                            <img src="https://i.postimg.cc/tR2N95TN/3beon.png" alt="Insight 03 Process 1" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/Pr7bw518/3beon-3.png" alt="Insight 03 Process 2" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/5Nr5C28v/3beon-1.png" alt="Insight 03 Process 3" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/9F0t07w2/3beon-2.png" alt="Insight 03 Process 4" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                        </div>
+                    </div>
+
+                    <!-- Insight 04 -->
+                    <div id="w9-insight4" class="scroll-mt-40 pb-20 border-b border-gray-100">
+                        <div class="flex items-center mb-8">
+                            <span class="w-3 h-3 bg-[#1ae214] mr-4 inline-block"></span>
+                            <h3 class="text-xl md:text-2xl font-bold text-black tracking-tighter">Insight 04</h3>
+                        </div>
+                        <div class="relative pl-10 md:pl-12 mb-12">
+                            <span class="absolute left-0 top-[-0.75rem] text-[#1ae214] font-serif text-5xl md:text-6xl opacity-90">“</span>
+                            <h4 class="text-xl md:text-2xl font-medium tracking-tight text-gray-800 leading-relaxed break-keep">
+                                AI의 발전으로 인해 다수가 협력하여 생성하는 산업에서 1인기업형으로 변화하고 있다.
+                            </h4>
+                        </div>
+                        <div class="w-full flex flex-col gap-8 mt-8">
+                            <img src="https://i.postimg.cc/xjx1fJSm/4beon.png" alt="Insight 04 Process 1" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/fW2RzthD/4beon-1.png" alt="Insight 04 Process 2" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/rynwV0LW/4beon-2.png" alt="Insight 04 Process 3" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                            <img src="https://i.postimg.cc/gcS2zXPZ/4beon-3.png" alt="Insight 04 Process 4" class="w-full h-auto border border-gray-200 shadow-sm rounded-2xl">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -394,6 +575,46 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Weekly Tab Switching Logic
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const weekContents = document.querySelectorAll('.week-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetWeek = btn.getAttribute('data-week');
+
+                    // Update contents visibility
+                    weekContents.forEach(content => {
+                        if (content.id === targetWeek) {
+                            content.classList.remove('hidden');
+                            content.classList.add('flex', 'lg:flex-row');
+                        } else {
+                            content.classList.add('hidden');
+                            content.classList.remove('flex', 'lg:flex-row');
+                        }
+                    });
+
+                    // Update tabs styling
+                    tabBtns.forEach(tBtn => {
+                        const text = tBtn.querySelector('.tab-text');
+                        const indicator = tBtn.querySelector('.tab-indicator');
+                        
+                        if (tBtn === btn) {
+                            text.classList.remove('text-gray-300', 'group-hover:text-gray-500');
+                            text.classList.add('text-gray-800');
+                            indicator.classList.remove('w-0');
+                            indicator.classList.add('w-full');
+                        } else {
+                            text.classList.remove('text-gray-800');
+                            text.classList.add('text-gray-300', 'group-hover:text-gray-500');
+                            indicator.classList.remove('w-full');
+                            indicator.classList.add('w-0');
+                        }
+                    });
+                });
+            });
+
+            // Scroll-spy Logic
             const targets = document.querySelectorAll("section[id], div[id]");
             const navLinks = document.querySelectorAll(".nav-link");
 
@@ -403,26 +624,28 @@
                         const activeId = entry.target.getAttribute("id");
                         // Reset all
                         navLinks.forEach(link => {
-                            link.classList.remove("text-[#00FF00]", "font-extrabold");
+                            link.classList.remove("text-[#1ae214]", "font-extrabold");
                             link.classList.add("text-gray-400", "font-bold");
                             const indicator = link.querySelector('.indicator');
-                            if(indicator) indicator.classList.replace("bg-[#00FF00]", "bg-transparent");
+                            if(indicator) indicator.classList.replace("bg-[#1ae214]", "bg-transparent");
                         });
 
                         // Set active
                         const activeLink = document.querySelector(`.nav-link[data-target="${activeId}"]`);
                         if (activeLink) {
                             activeLink.classList.remove("text-gray-400", "font-bold");
-                            activeLink.classList.add("text-[#00FF00]", "font-extrabold");
+                            activeLink.classList.add("text-[#1ae214]", "font-extrabold");
                             const indicator = activeLink.querySelector('.indicator');
-                            if(indicator) indicator.classList.replace("bg-transparent", "bg-[#00FF00]");
+                            if(indicator) indicator.classList.replace("bg-transparent", "bg-[#1ae214]");
                         }
                     }
                 });
             }, { rootMargin: "-30% 0px -60% 0px" });
 
             targets.forEach(target => {
-                if(target.id === 'overview' || target.id === 'collection' || target.id === 'classification' || target.id.startsWith('class-') || target.id === 'insights') {
+                const w8Targets = ['overview', 'collection', 'classification', 'insights'];
+                const w9Targets = ['w9-summary', 'w9-process', 'w9-insight1', 'w9-insight2', 'w9-insight3', 'w9-insight4'];
+                if(w8Targets.includes(target.id) || target.id.startsWith('class-') || w9Targets.includes(target.id)) {
                     observer.observe(target);
                 }
             });

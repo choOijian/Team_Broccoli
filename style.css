@@ -19,11 +19,11 @@ body {
 }
 
 .hover-neon:hover {
-    color: #00FF00;
+    color: #1ae214;
 }
 
 ::selection {
-    background-color: #00FF00;
+    background-color: #1ae214;
     color: black;
 }
 
