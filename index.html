@@ -3,42 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Broccoli.</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>보이지 않게 설계된 일상 — Team Broccoli</title>
+    <meta name="description" content="스마트폰과 AI가 보이지 않게 설계한 일상을 탐구하는 Team Broccoli의 리서치 프로젝트">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="antialiased overflow-hidden flex flex-col h-screen selection:bg-[#1ae214] selection:text-black">
+<body class="hero-page">
 
-    <!-- Header Section -->
-    <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-transparent">
-        <a href="index.html" class="text-3xl md:text-4xl font-extrabold tracking-tighter hover-neon cursor-pointer">
-            Broccoli.
-        </a>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">Broccoli.</a>
+        <div class="nav-links">
+            <a href="about.html" class="nav-link">About</a>
+            <a href="archive.html" class="nav-link">Archive</a>
+            <a href="works.html" class="nav-link">Works</a>
+        </div>
+    </nav>
 
-        <nav class="flex gap-6 md:gap-12 text-lg md:text-xl font-bold tracking-tighter">
-            <a href="about.html" class="hover-neon">About</a>
-            <a href="archive.html" class="hover-neon">Archive</a>
-            <a href="works.html" class="hover-neon">Works</a>
-        </nav>
-    </header>
+    <!-- Scrollable wrapper: navbar/footer float above this -->
+    <div class="site-wrapper">
 
-    <!-- Main Content -->
-    <main class="w-full flex-grow flex flex-col pt-32 md:pt-48 bg-white relative">
-        
-        <!-- Center/Top: Big Text Layer -->
-        <div class="flex justify-center w-full px-6">
-            <h1 class="text-center font-extrabold text-black tracking-tighter leading-[1.1] md:whitespace-nowrap" style="font-size: clamp(2.5rem, 5vw, 6.5rem);">
-                <span class="block md:inline mb-2 md:mb-0">PROJECT<span class="inline-block mx-2 md:mx-4 opacity-80">:</span></span><span class="block md:inline">보이지 않게 설계된 일상</span>
-            </h1>
+    <!-- Hero Section -->
+    <main class="hero">
+
+        <!-- Grid Background -->
+        <div class="grid-bg" aria-hidden="true"></div>
+
+        <!-- Main Content Row -->
+        <div class="hero-content">
+
+            <!-- Left Text -->
+            <div class="hero-text hero-text-left">
+                <h1 class="hero-headline">보이지 않게</h1>
+            </div>
+
+
+
+            <!-- Right Text -->
+            <div class="hero-text hero-text-right">
+                <p class="hero-headline">설계된 일상</p>
+            </div>
+
         </div>
 
-        <!-- Bottom: Team Info -->
-        <div class="absolute bottom-0 left-0 w-full flex items-end justify-between px-6 pb-8 md:px-12 md:pb-10 text-lg md:text-2xl font-medium tracking-tighter text-black">
-            <span>TEAM. 브로콜리</span>
-            <span class="text-right">박성은, 염지우, 최서희, 최지안</span>
-        </div>
-        
     </main>
+
+    </div><!-- /.site-wrapper -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <span class="footer-team">Team Broccoli</span>
+        <div class="footer-members">
+            <span>박성은</span>
+            <span>염지우</span>
+            <span>최서희</span>
+            <span>최지안</span>
+        </div>
+    </footer>
 
 </body>
 </html>

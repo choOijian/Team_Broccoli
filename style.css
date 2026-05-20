@@ -1,35 +1,762 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* ============================================
+   GLOBAL: Pretendard Font Import
+   ============================================ */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 
-body {
-    font-family: 'Pretendard', sans-serif;
-    background-color: #ffffff;
-    color: #111111;
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-.hero-title {
-    font-size: min(15vw, 16rem);
-    line-height: 1;
-    letter-spacing: -0.07em; /* Extreme narrow tracking */
-    font-weight: 300;
+html, body {
+    width: 100%;
+    height: 100%;
+    /* body must NOT have overflow hidden/auto or transform —
+       that would turn it into a containing block for fixed children
+       and break consistent navbar / footer positioning. */
+    overflow: hidden;
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.hover-neon {
-    transition: color 0.3s ease;
+/* All pages scroll through .site-wrapper, not the body */
+.site-wrapper {
+    position: fixed; /* keep it out of normal flow so body stays hidden */
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
 }
 
-.hover-neon:hover {
-    color: #1ae214;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
+section, main, .scroll-snap-target {
+    scroll-snap-align: start;
+    scroll-margin-top: 80px;
+}
+
+/* ============================================
+   HERO PAGE LAYOUT
+   ============================================ */
+.hero-page {
+    background-color: #1A36D6;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ============================================
+   GRID BACKGROUND
+   ============================================ */
+.grid-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* ============================================
+   NAVIGATION BAR
+   ============================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;          /* 고정 높이 — 모든 페이지 동일 */
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 48px;       /* 수평 패딩만, 수직은 height로 제어 */
+    background: transparent;
+    pointer-events: none;
+}
+
+.navbar * {
+    pointer-events: auto;
+}
+
+.nav-brand {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.nav-brand:hover {
+    color: #D6FF00;
+}
+
+.white-page .nav-brand:hover {
+    color: #1A36D6;
+}
+
+.nav-links {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.85);
+    transition: color 0.2s ease;
+    text-transform: capitalize;
+}
+
+.nav-link:hover {
+    color: #D6FF00;
+}
+
+/* ============================================
+   HERO MAIN SECTION  — viewport 완전 정중앙
+   ============================================ */
+.hero {
+    position: fixed;         /* site-wrapper가 스크롤 컨텍스트이므로
+                                hero는 viewport 중앙에 딱 고정 */
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;    /* 클릭 이벤트는 컨텐츠 요소에만 */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 48px;
+    pointer-events: auto;
+}
+
+/* ============================================
+   HERO TEXT
+   ============================================ */
+.hero-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text-left {
+    justify-content: flex-end;
+    padding-right: clamp(40px, 8vw, 140px);
+    padding-left: 0;
+}
+
+.hero-text-right {
+    justify-content: flex-start;
+    padding-left: clamp(40px, 8vw, 140px);
+    padding-right: 0;
+}
+
+.hero-headline {
+    font-size: clamp(2rem, 3.2vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* ============================================
+   HERO GRAPHIC: SILHOUETTE
+   ============================================ */
+.hero-graphic {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(180px, 18vw, 280px);
+    position: relative;
+}
+
+.silhouette-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 14px rgba(214, 255, 0, 0.4));
+    animation: floatY 4s ease-in-out infinite;
+}
+
+.silhouette-a,
+.silhouette-b {
+    display: none;
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;          /* 고정 높이 — 모든 페이지 동일 */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;       /* 수직은 height로, 수평만 패딩 */
+    background: transparent;
+    pointer-events: none;
+}
+
+.site-footer * {
+    pointer-events: auto;
+}
+
+.footer-team {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.7);
+    text-transform: capitalize;
+}
+
+.footer-members {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-members span {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.7);
+}
+
+/* ============================================
+   GLOBAL STYLES (shared across pages)
+   ============================================ */
 ::selection {
-    background-color: #1ae214;
-    color: black;
+    background-color: #D6FF00;
+    color: #1A36D6;
 }
 
-/* Global Image Optimization */
-img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: high-quality;
-    transform: translateZ(0); /* Hardware acceleration for smoother edges */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .navbar {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .site-footer {
+        height: auto;
+        padding: 12px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 20px;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero-text-left {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .hero-text-right {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .hero-headline {
+        font-size: clamp(2.4rem, 10vw, 4rem);
+        text-align: center;
+    }
+
+    .hero-graphic {
+        width: clamp(140px, 45vw, 220px);
+    }
+
+    .footer-members {
+        gap: 12px;
+    }
+}
+
+/* ============================================
+   ARCHIVE / WORKS / ABOUT page shared base
+   ============================================ */
+.page-body {
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* Legacy hover-neon for other pages */
+.hover-neon {
+    transition: color 0.25s ease;
+}
+.hover-neon:hover {
+    color: #D6FF00;
+}
+
+/* ============================================
+   BLUE PAGE & WHITE PAGE SYSTEM
+   ============================================ */
+.blue-page {
+    background-color: #1A36D6;
+    color: #ffffff;
+    position: relative;
+}
+
+/* blue-page / hero-page 공통: 흰색 텍스트 명시 */
+.blue-page .nav-brand,
+.hero-page .nav-brand {
+    color: #ffffff;
+}
+
+.blue-page .nav-link,
+.hero-page .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.blue-page .nav-link.active,
+.hero-page .nav-link.active {
+    color: #D6FF00;
+    font-weight: 700;
+}
+
+.blue-page .nav-link:hover,
+.hero-page .nav-link:hover {
+    color: #D6FF00;
+}
+
+.blue-page .footer-team,
+.hero-page .footer-team,
+.blue-page .footer-members span,
+.hero-page .footer-members span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.white-page {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    position: relative;
+}
+
+.white-page .navbar {
+    background: transparent;
+}
+
+.white-page .nav-brand {
+    color: #1a1a1a;
+}
+
+.white-page .nav-link {
+    color: rgba(26, 26, 26, 0.65);
+}
+
+.white-page .nav-link:hover,
+.white-page .nav-link.active {
+    color: #1A36D6;
+}
+
+.white-page .nav-link.active {
+    font-weight: 700;
+}
+
+.white-page .site-footer {
+    background: transparent;
+}
+
+.white-page .footer-team,
+.white-page .footer-members span {
+    color: rgba(26, 26, 26, 0.5);
+}
+
+/* ============================================
+   ABOUT PAGE LAYOUT
+   ============================================ */
+.about-container {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 180px 48px 120px;
+    display: block;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    width: 100%;
+}
+
+.about-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.about-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #D6FF00;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.about-title {
+    font-size: clamp(2rem, 3.2vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+}
+
+.about-desc {
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+}
+
+.about-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 64px;
+}
+
+.about-section-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.about-section-title::before {
+    content: '';
+    position: absolute;
+    left: -69px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    background-color: #D6FF00;
+}
+
+.about-subsection {
+    margin-bottom: 48px;
+}
+
+.about-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.about-sub-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.about-sub-title .sub-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.about-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #D6FF00;
+    background-color: rgba(214, 255, 0, 0.1);
+    border: 1px solid rgba(214, 255, 0, 0.25);
+    padding: 6px 12px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.about-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.about-list li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.bullet-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #D6FF00;
+    border: 1px solid rgba(214, 255, 0, 0.3);
+    padding: 2px 6px;
+    line-height: 1;
+    font-family: monospace;
+}
+
+.list-content strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+
+.list-content p {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    word-break: keep-all;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .about-container {
+        padding: 120px 24px 60px;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .about-details {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-top: 40px;
+    }
+    
+    .about-section-title::before {
+        display: none;
+    }
+}
+
+/* ============================================
+   WORKS PAGE LAYOUT
+   ============================================ */
+.works-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 180px 48px 120px;
+}
+
+.works-header {
+    margin-bottom: 60px;
+}
+
+.works-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #1A36D6;
+    margin-bottom: 12px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.works-title {
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #1A36D6;
+    box-shadow: 0 12px 30px rgba(26, 54, 214, 0.06);
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 65%; /* 16:10 aspect ratio */
+    overflow: hidden;
+}
+
+.project-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-blue-grid {
+    background-color: #1A36D6;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.bg-fog-grid {
+    background-color: #111111;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.bg-choice-grid {
+    background-color: #f0f0f0;
+    background-image: 
+        linear-gradient(rgba(26, 54, 214, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 54, 214, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.tech-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transform: scale(0.85);
+}
+
+.bg-choice-grid .tech-lines {
+    border-color: rgba(26, 54, 214, 0.15);
+}
+
+.tech-label {
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.bg-choice-grid .tech-label {
+    color: #1A36D6;
+    background-color: rgba(26, 54, 214, 0.05);
+    border: 1px solid rgba(26, 54, 214, 0.1);
+}
+
+.project-info {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #1A36D6;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.project-desc {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #666666;
+    word-break: keep-all;
+}
+
+@media (max-width: 1024px) {
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .works-container {
+        padding: 120px 24px 60px;
+    }
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }

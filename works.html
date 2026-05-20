@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Broccoli. - Works</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Works — Team Broccoli</title>
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
-<body class="antialiased overflow-hidden flex flex-col h-screen selection:bg-[#1ae214] selection:text-black">
+<body class="white-page">
 
-    <!-- Header Section -->
-    <header class="fixed top-0 left-0 w-full flex items-center justify-between px-6 py-8 md:px-12 md:py-10 z-50 bg-transparent">
-        <a href="index.html" class="text-3xl md:text-4xl font-extrabold tracking-tighter hover-neon cursor-pointer">
-            Broccoli.
-        </a>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">Broccoli.</a>
+        <div class="nav-links">
+            <a href="about.html" class="nav-link">About</a>
+            <a href="archive.html" class="nav-link">Archive</a>
+            <a href="works.html" class="nav-link active">Works</a>
+        </div>
+    </nav>
 
-        <nav class="flex gap-6 md:gap-12 text-lg md:text-xl font-bold tracking-tighter">
-            <a href="about.html" class="hover-neon">About</a>
-            <a href="archive.html" class="hover-neon">Archive</a>
-            <a href="works.html" class="hover-neon text-[#1ae214]">Works</a>
-        </nav>
-    </header>
+    <!-- Scrollable wrapper -->
+    <div class="site-wrapper">
 
-    <!-- Blank State -->
+    <!-- Main Works Gallery (Empty as requested) -->
     <main class="w-full flex-grow bg-white"></main>
+
+    </div><!-- /.site-wrapper -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <span class="footer-team">Team Broccoli</span>
+        <div class="footer-members">
+            <span>박성은</span>
+            <span>염지우</span>
+            <span>최서희</span>
+            <span>최지안</span>
+        </div>
+    </footer>
 
 </body>
 </html>
